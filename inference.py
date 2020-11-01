@@ -12,7 +12,7 @@ class IntentClassifier:
 	IntentClassifier - class for intent-classification
 	"""
 
-	def __init__(self, model, vectorizer, vocabs, intents):
+	def __init__(self, model, vectorizer, intents):
 		"""
 		Constructor for IntentClassifier class
 		Support hosting SVM model
@@ -21,8 +21,6 @@ class IntentClassifier:
 				Path to movel weights
 			- vectorizer : str or Sklearn Vectorizer
 				Path to vectorizer-file or Sklearn Vectorizer object
-			- vocabs : str or dict
-				Path to dict or dictionary of keys (terms) and values (indices to mapping indices)
 			- intents : str or list of intents
 				Path to intent_list of list of intents
 		"""
@@ -33,14 +31,6 @@ class IntentClassifier:
 		else:
 			self.modle = model
 
-		# load vocabs
-		if isinstance(vocabs, str):
-			with open(vocabs, 'rb') as file:
-				self.vocabs = pickle.load(file)
-
-		else:
-			self.vocabs = vocabs
-					
 		# load intents
 		if isinstance(intents, str):
 			with open(intents) as file:
