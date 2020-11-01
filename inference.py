@@ -26,6 +26,7 @@ class IntentClassifier:
 		"""
 
 		# load model
+		print("Loading IntentClassifier model")
 		if isinstance(model, str):
 			self.model = pickle.load(open(model, 'rb'))
 		else:
