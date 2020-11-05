@@ -13,4 +13,4 @@ vectorizer = 'tfidf_vectorizer.pickle'
 
 model = IntentClassifier(model, intents = intents, vectorizer = vectorizer)
 
-model.predict("Who am I")
+print(model.predict("travel to New York"))
